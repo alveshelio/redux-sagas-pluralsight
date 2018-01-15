@@ -135,7 +135,8 @@
       "react/jsx-no-target-blank": 0,
       "react/require-extension": 0,
       "react/self-closing-comp": 0,
-      "require-yield": 0
+      "require-yield": 0,
+      "jsx-quotes": [2, "prefer-single"]
     },
     "settings": {
       "import/resolver": {
