@@ -136,7 +136,10 @@
       "react/require-extension": 0,
       "react/self-closing-comp": 0,
       "require-yield": 0,
-      "jsx-quotes": [2, "prefer-single"]
+      "jsx-quotes": [
+        2,
+        "prefer-single"
+      ]
     },
     "settings": {
       "import/resolver": {
@@ -181,8 +184,10 @@
     ]
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "babel-polyfill": "6.13.0",
     "chalk": "^1.1.3",
+    "classnames": "^2.2.5",
     "compression": "1.6.2",
     "express": "4.14.0",
     "fontfaceobserver": "2.0.1",
@@ -192,8 +197,10 @@
     "invariant": "2.2.1",
     "ip": "1.1.3",
     "lodash": "4.15.0",
+    "prop-types": "^15.6.0",
     "react": "15.3.0",
     "react-dom": "15.3.0",
+    "react-fontawesome": "^1.6.1",
     "react-helmet": "3.1.0",
     "react-intl": "2.1.3",
     "react-redux": "4.4.5",
