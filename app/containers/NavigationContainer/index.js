@@ -16,12 +16,29 @@ export class NavigationContainer extends React.Component { // eslint-disable-lin
   componentDidMount() {
     this.props.onRequestTopics();
   }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.routerLocation !== this.props.routerLocation) {
+      this.props.onRequestTopics();
+    }
+  }
+
   render() {
     return (
-      <Navigation {...this.props} />
+      <div>
+        {this.props.topics.length > 0 ? <Navigation {...this.props} /> : <p>Loading</p>}
+      </div>
     );
   }
 }
+
+NavigationContainer.propTypes = {
+  topics: PropTypes.arrayOf(PropTypes.shape({
+    description: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+  })),
+};
 
 const mapStateToProps = selectNavigationContainer();
 
@@ -39,6 +56,7 @@ NavigationContainer.propTypes = {
   onRequestTopicsFailed: PropTypes.func.isRequired,
   onSelectTopic: PropTypes.func.isRequired,
   onToggleDrawer: PropTypes.func.isRequired,
+  routerLocation: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavigationContainer);

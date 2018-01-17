@@ -10,18 +10,24 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Navigation from '../NavigationContainer';
-import LinkList from '../LinkListContainer';
 
-export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
+class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   render() {
     return (
       <div>
         <Navigation />
-        <LinkList />
+        {this.props.children}
       </div>
     );
   }
 }
+
+HomePage.propTypes = {
+  children: PropTypes.element,
+};
+
+export default HomePage;

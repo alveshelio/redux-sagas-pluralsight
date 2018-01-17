@@ -11,10 +11,10 @@ import styles from './styles.css';
 import AppBar from '../AppBar';
 import Drawer from '../Drawer';
 
-function Navigation({ topics, onSelectTopic, onToggleDrawer, isDrawerOpen }) {
+function Navigation({ topics, onSelectTopic, onToggleDrawer, isDrawerOpen, email }) {
   return (
     <div className={styles.navigation}>
-      <AppBar toggleDrawerHandler={onToggleDrawer} />
+      <AppBar toggleDrawerHandler={onToggleDrawer} email={email} />
       <Drawer
         items={topics}
         selectedItem={onSelectTopic}
@@ -34,6 +34,7 @@ Navigation.propTypes = {
   onSelectTopic: PropTypes.func.isRequired,
   onToggleDrawer: PropTypes.func.isRequired,
   isDrawerOpen: PropTypes.bool.isRequired,
+  email: PropTypes.string,
 };
 
 export default Navigation;
